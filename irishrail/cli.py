@@ -18,7 +18,7 @@ def stations():
 
 
 @cli.command()
-@click.option("-s", "--station")
+@click.option("-s", "--station", required=True)
 @click.option("-f", "--follow", is_flag=True, default=False)
 def live(station, follow):
     commands.live(station, follow)

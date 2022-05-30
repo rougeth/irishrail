@@ -7,7 +7,7 @@ from rich.text import Text
 from rich.live import Live
 from rich import box, print as rich_print
 
-from irishrail import IrishRail
+from irishrail import irishrail
 
 
 COLOR_GREEN = "light_green"
@@ -78,8 +78,7 @@ def render_station(station, northbound, southbound, updated_at):
 
 
 def render_station_not_found(station):
-    client = IrishRail()
-    stations = client.list_stations()
+    stations = irishrail.list_stations()
     stations = [station["StationDesc"].lower() for station in stations]
 
     if station.lower() not in stations:
@@ -95,8 +94,7 @@ def render_station_not_found(station):
 
 
 def render_live(station):
-    client = IrishRail()
-    data = client.next_trains(station)
+    data = irishrail.next_trains(station)
     if not data:
         render_station_not_found(station)
         return None

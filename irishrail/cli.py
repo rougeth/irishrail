@@ -1,6 +1,4 @@
 import click
-import time
-from rich.live import Live
 from rich import print
 
 from irishrail import commands

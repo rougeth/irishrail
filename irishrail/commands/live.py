@@ -13,14 +13,12 @@ from irishrail import irishrail
 COLOR_GREEN = "light_green"
 COLOR_ORANGE = "sandy_brown"
 COLOR_GRAY = "gray70"
+NEWLINE = "\n"
 
 
 def format_duein(station):
     due = station.get("Duein", "")
-    if not due:
-        return ""
-
-    return f"{due} min"
+    return f"{due} min" if due else ""
 
 
 def split_per_direction(data):
@@ -35,7 +33,6 @@ def split_per_direction(data):
 
 
 def render_title(station_name):
-    NEWLINE = "\n"
     DIVIDER = " - "
 
     return Text.assemble(
@@ -48,12 +45,22 @@ def render_title(station_name):
     )
 
 
-def render_station(station, northbound, southbound, updated_at):
+def render_caption(updated_at, follow):
+    updated_at_label = Text(f"Updated at: {updated_at}")
+    if follow:
+        updated_at_label.append(
+            f"{NEWLINE} Press CTRL-C to exit {NEWLINE}", style=COLOR_GRAY
+        )
+
+    return updated_at_label
+
+
+def render_station(station, northbound, southbound, updated_at, follow):
     title = render_title(station)
 
     table = Table(
         title=title,
-        caption=f"Updated at: {updated_at}",
+        caption=render_caption(updated_at, follow),
         box=box.DOUBLE_EDGE,
         title_style="white bold",
         caption_style=COLOR_GRAY,
@@ -93,24 +100,25 @@ def render_station_not_found(station):
     rich_print(message)
 
 
-def render_live(station):
+def render_live(station, follow):
     data = irishrail.next_trains(station)
     if not data:
         render_station_not_found(station)
         return None
+
     updated_at = datetime.now()
 
     northbound, southbound = split_per_direction(data)
-    return render_station(station, northbound, southbound, updated_at)
+    return render_station(station, northbound, southbound, updated_at, follow)
 
 
 def live(station, follow):
     REFRESH_PER_SECOND = 30
 
-    with Live(render_live(station)) as live:
+    with Live(render_live(station, follow)) as live:
         while follow:
             time.sleep(REFRESH_PER_SECOND)
-            table = render_live(station)
+            table = render_live(station, follow)
             if not table:
                 break
             live.update(table)

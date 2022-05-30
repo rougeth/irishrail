@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "irishrail"
-version = "0.0.4a"
+version = "0.0.5a"
 description = ""
 authors = ["Marco Rougeth <rougeth@users.noreply.github.com>"]
 

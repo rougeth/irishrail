@@ -22,7 +22,8 @@ def format_duein(station):
 
 
 def split_per_direction(data):
-    northbound = southbound = []
+    northbound = []
+    southbound = []
     for train in data:
         if train["Direction"] == "Southbound":
             southbound.append(train)

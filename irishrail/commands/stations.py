@@ -1,6 +1,6 @@
 from rich.columns import Columns
 
-from irishrail import irishrail
+from irishrail import api
 
 
 def _print_station(station):
@@ -10,7 +10,7 @@ def _print_station(station):
 
 
 def stations():
-    data = irishrail.list_stations()
+    data = api.list_stations()
 
     stations = [_print_station(station) for station in data]
     columns = Columns(stations, equal=True, expand=True)

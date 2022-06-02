@@ -19,7 +19,7 @@ def next_trains(station):
         # IrishRail API returns 202 for stations that doesn't exists or has no data.
         return []
 
-    return sorted(trains, key=lambda train: train["Duein"])
+    return sorted(trains, key=lambda train: int(train["Duein"]))
 
 
 def list_stations():

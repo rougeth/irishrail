@@ -1,0 +1,33 @@
+{
+  "ArrayOfObjStation": {
+    "@xmlns": "http://api.irishrail.ie/realtime/",
+    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "objStation": [
+      {
+        "StationAlias": null,
+        "StationCode": "SLIGO",
+        "StationDesc": "Sligo",
+        "StationId": "180",
+        "StationLatitude": "54.2723",
+        "StationLongitude": "-8.48249"
+      },
+      {
+        "StationAlias": null,
+        "StationCode": "PMNCK",
+        "StationDesc": "Portmarnock",
+        "StationId": "111",
+        "StationLatitude": "53.4169",
+        "StationLongitude": "-6.1512"
+      },
+      {
+        "StationAlias": null,
+        "StationCode": "DLERY",
+        "StationDesc": "Dun Laoghaire",
+        "StationId": "131",
+        "StationLatitude": "53.2951",
+        "StationLongitude": "-6.13498"
+      }
+    ]
+  }
+}

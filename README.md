@@ -1,6 +1,8 @@
 # 🚂 irishrail 🇮🇪
 
-<img width="776" alt="🚂🇮🇪" src="https://user-images.githubusercontent.com/431892/173165239-25db6a7c-a15c-4d25-ac69-150bd78a4968.png">
+<img width="776" alt="🚂🇮🇪(2)" src="https://user-images.githubusercontent.com/431892/173185574-6d01354e-7c25-4a9e-8a1b-61d6bc795f9c.png">
+
+🚉 Irish Rail live updates in your terminal
 
 ### Install
 ```
@@ -16,15 +18,15 @@ Options:
   --help  Show this message and exit.
 
 Commands:
-  live
-  stations
+  live      Train station updates
+  stations  List all stations available
 ```
 
 ### Bonus
-Use live command with `-f` option to receive updates every 30s:
+Use live command with `-f` option to update timetable every couple of seconds:
 
 ```
-❯ irishrail live -f -s "grand canal dock" 
+❯ irishrail live -f "grand canal dock" 
 
                   Grand Canal Dock
               Northbound - Southbound

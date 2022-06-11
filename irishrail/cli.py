@@ -9,15 +9,21 @@ def cli():
     ...
 
 
-@cli.command()
+@cli.command(help="List all stations available")
 def stations():
     stations = commands.stations()
     print(stations)
 
 
-@cli.command()
-@click.option("-s", "--station", required=True)
-@click.option("-f", "--follow", is_flag=True, default=False)
+@cli.command(help="Train station updates")
+@click.argument("station", required=True)
+@click.option(
+    "-f",
+    "--follow",
+    is_flag=True,
+    default=False,
+    help="Keep watching for updates every couple of seconds",
+)
 def live(station, follow):
     commands.live(station, follow)
 

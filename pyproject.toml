@@ -1,11 +1,13 @@
 [tool.poetry]
 name = "irishrail"
-version = "0.0.7a"
+version = "0.1.0"
 description = ""
 authors = ["Marco Rougeth <rougeth@users.noreply.github.com>"]
+readme = "README.md"
+homepage = "https://github.com/rougeth/irishrail"
 
 [tool.poetry.scripts]
-irishrail = 'irishrail.cli:cli'
+irishrail = "irishrail.cli:cli"
 
 [tool.poetry.dependencies]
 python = "^3.8"

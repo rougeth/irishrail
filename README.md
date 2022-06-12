@@ -1,6 +1,6 @@
 # 🚂 irishrail 🇮🇪
 
-<img width="776" alt="🚂🇮🇪(2)" src="https://user-images.githubusercontent.com/431892/173185574-6d01354e-7c25-4a9e-8a1b-61d6bc795f9c.png">
+<img width="772" alt="Print screen of the command `irishrail live 'dun laoghaire'`" src="https://user-images.githubusercontent.com/431892/173231379-df87b676-7093-4800-a3dd-352ef9417926.png">
 
 🚉 Irish Rail live updates in your terminal
 
